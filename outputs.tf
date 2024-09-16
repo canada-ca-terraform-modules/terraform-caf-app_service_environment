@@ -12,3 +12,7 @@ output "ase_name" {
   description = "Outputs the name of the ASE"
   value = azurerm_app_service_environment_v3.ase.name
 }
+
+output "dns_suffix" {
+  value = azurerm_app_service_environment_v3.ase.dns_suffix
+}

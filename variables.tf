@@ -36,13 +36,7 @@ variable "subnets" {
   default = null
 }
 
-variable "vnet_id" {
-  description = "Vnet ID of the target subscription. USed to create local private DNS zone for the ASE"
-  type = string
-  default = null
-}
-
-variable "appServiceEnvironmment" {
+variable "appServiceEnvironment" {
   description = "Object containing all parameters for the app service environment"
   type = any
   default = {}
