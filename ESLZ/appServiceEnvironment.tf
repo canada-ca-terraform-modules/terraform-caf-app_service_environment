@@ -5,7 +5,7 @@ variable "AppServiceEnvironment" {
 }
 
 module "AppServiceEnvironment" {
-  source = "github.com/canada-ca-terraform-modules/terraform-caf-app_service_environment.git?ref=v1.0.0"
+  source = "github.com/canada-ca-terraform-modules/terraform-caf-app_service_environment.git?ref=v1.0.1"
   for_each = var.AppServiceEnvironment
 
   userDefinedString = each.key
@@ -17,5 +17,10 @@ module "AppServiceEnvironment" {
   appServiceEnvironment = each.value
   tags = var.tags
 }
+
+locals {
+  ase_id = {for name, param in try(var.AppServiceEnvironment, {}): name => module.AppServiceEnvironment[name].ase_id}
+}
+
 
 
