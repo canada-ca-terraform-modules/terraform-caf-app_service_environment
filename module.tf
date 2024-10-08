@@ -7,7 +7,7 @@ resource "azurerm_app_service_environment_v3" "ase" {
   allow_new_private_endpoint_connections = try(var.appServiceEnvironment.allowallow_new_private_endpoint_connections, false)
   dedicated_host_count = try(var.appServiceEnvironment.dedicated_host_count, null)
   remote_debugging_enabled = try(var.appServiceEnvironment.remote_debugging_enabled, false)
-  zone_redundant = try(var.appServiceEnvironment.zone_redundant, true)
+  zone_redundant = try(var.appServiceEnvironment.zone_redundant, false)
   internal_load_balancing_mode = try(var.appServiceEnvironment.internal_load_balancing_mode, "Web, Publishing")
 
   dynamic "cluster_setting" {
