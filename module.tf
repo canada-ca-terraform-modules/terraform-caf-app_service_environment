@@ -19,10 +19,6 @@ resource "azurerm_app_service_environment_v3" "ase" {
   }
   tags = merge(var.tags, try(var.appServiceEnvironment.tags, {}))
 
-  lifecycle {
-    ignore_changes = [ tags ]
-  }
-
   timeouts {
     create = "6h0m"
     update = "6h0m"

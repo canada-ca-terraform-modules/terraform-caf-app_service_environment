@@ -5,7 +5,7 @@ variable "AppServiceEnvironment" {
 }
 
 module "AppServiceEnvironment" {
-  source = "github.com/canada-ca-terraform-modules/terraform-caf-app_service_environment.git?ref=v1.0.1"
+  source = "github.com/canada-ca-terraform-modules/terraform-caf-app_service_environment.git?ref=v1.0.2"
   for_each = var.AppServiceEnvironment
 
   userDefinedString = each.key
